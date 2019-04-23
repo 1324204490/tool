@@ -14,7 +14,7 @@ type Result struct {
 /*
 d为通用返回数据，e为可选参数，e不为空时返回失败result
 */
-func GetResult(result *Result, d interface{}, e ...string) *Result {
+func GetResult(result *Result, d interface{}, e ...string) {
 	if len(e) > 0 {
 		result.Status = false
 		result.Msg = e[0]
@@ -24,5 +24,4 @@ func GetResult(result *Result, d interface{}, e ...string) *Result {
 		result.Msg = "success"
 		result.Data = d
 	}
-	return nil
 }
