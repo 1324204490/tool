@@ -15,7 +15,7 @@ type Result struct {
 d为通用返回数据，e为可选参数，e不为空时返回失败result
 用于微服务
 */
-func GetResult(result *Result, d interface{}, e ...string) {
+func SetResult(result *Result, d interface{}, e ...string) {
 	if len(e) > 0 {
 		result.Status = false
 		result.Msg = e[0]

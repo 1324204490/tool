@@ -14,8 +14,15 @@ import (
 生成一组不重复的随机数
 start 从0开始
 end   到end结束  包含start  不包含end
+count 需要生成的随机数数量
+条件
+1.count 不能大于end-start
+2.end   不能小于或者等于start
 */
 func GenerateRandomNumber(start, end int, count int) []int {
+	if count > (end - start) {
+		return nil
+	}
 	//存放结果的slice
 	nums := make([]int, 0)
 	//随机数生成器，加入时间戳保证每次生成的随机数不一样
