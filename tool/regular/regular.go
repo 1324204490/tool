@@ -12,7 +12,7 @@ IsPhone()
 验证手机号格式是否正确
 */
 func IsPhone(phone string) bool {
-	b, _ := regexp.MatchString("^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\\d{8}$", phone)
+	b, _ := regexp.MatchString("^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\\d{8}$", phone)
 	return b
 }
 
