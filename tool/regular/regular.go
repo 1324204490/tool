@@ -5,7 +5,10 @@
  */
 package regular
 
-import "regexp"
+import (
+	"regexp"
+	"strings"
+)
 
 /**
 IsPhone()
@@ -40,4 +43,21 @@ func IsPwd(pwd string) bool {
 func IsVehicleNumber(vehicleNumber string) bool {
 	b, _ := regexp.MatchString("^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$", vehicleNumber)
 	return b
+}
+
+/*
+验证身份证号
+*/
+func IsVehicleIdCard(idCard string) bool {
+	var coefficient = []int32{7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2}
+	var code = []byte{'1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2'}
+	if len(idCard) != 18 {
+		return false
+	}
+	idByte := []byte(strings.ToUpper(idCard))
+	sum := int32(0)
+	for i := 0; i < 17; i++ {
+		sum += int32(byte(idByte[i])-byte('0')) * coefficient[i]
+	}
+	return code[sum%11] == idByte[17]
 }
