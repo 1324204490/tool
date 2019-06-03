@@ -67,6 +67,9 @@ data 经过格式化的请求数据
 需要设置登录获取的Cookie
 */
 func Request(url, data, cookie string) string {
+	if cookie == "" {
+		return "cookie没传"
+	}
 	client := &http.Client{}
 	req, _ := http.NewRequest("Post", url, strings.NewReader(data))
 	req.Header.Set("Cookie", cookie)
