@@ -33,3 +33,9 @@ func TimeFormatString(time time.Time) string {
 	strTime := time.Format(baseFormat)
 	return strTime
 }
+
+//获取当前时间 string 没有小尾巴
+func GetTimeStringNowNoTail() string {
+	t := TimeFormatString(*GetTimeNow())
+	return t[:len(t)-9]
+}
