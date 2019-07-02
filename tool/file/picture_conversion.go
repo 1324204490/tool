@@ -10,6 +10,7 @@ import (
 	"github.com/prometheus/common/log"
 	"io"
 	"os"
+	"strings"
 )
 
 /**
@@ -35,7 +36,8 @@ func PictureConversion(fileNameAddr, toFileNameAddr string) bool {
 	return true
 }
 
-func VerificationImg(suffix string) bool {
+func VerificationImg(fName string) bool {
+	suffix := fName[strings.LastIndex(fName, "."):]
 	if suffix == ".bmp" || suffix == ".jpg" ||
 		suffix == ".png" || suffix == ".jpeg" ||
 		suffix == ".webp" || suffix == ".pcx" ||
