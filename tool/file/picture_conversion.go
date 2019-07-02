@@ -34,3 +34,16 @@ func PictureConversion(fileNameAddr, toFileNameAddr string) bool {
 	}
 	return true
 }
+
+func VerificationImg(suffix string) bool {
+	if suffix == ".bmp" || suffix == ".jpg" ||
+		suffix == ".png" || suffix == ".jpeg" ||
+		suffix == ".webp" || suffix == ".pcx" ||
+		suffix == ".tif" || suffix == ".tga" ||
+		suffix == ".fpx" || suffix == ".psd" ||
+		suffix == ".pcd" {
+	} else {
+		return false
+	}
+	return true
+}
