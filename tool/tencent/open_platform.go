@@ -28,16 +28,12 @@ import (
 type Platform struct {
 	EncodingAESKey string
 	AppSecret      string
-	RedirectUri    string
-	AppID          string
 	Aes            []byte
 }
 
 func (p *Platform) NewPlatform(AppID, AppSecret, RedirectUri, EncodingAESKey string) *Platform {
 	p.AppSecret = AppSecret
-	p.RedirectUri = RedirectUri
 	p.EncodingAESKey = EncodingAESKey
-	p.AppID = AppID
 	p.Aes = encodingAESKey2AESKey(EncodingAESKey)
 	return p
 }
