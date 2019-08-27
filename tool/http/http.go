@@ -29,6 +29,10 @@ func NewRequest(method, url string, body io.Reader) (by []byte, err error) {
 			return nil, err
 		}
 		resp, err := client.Do(req)
+		if err != nil {
+			log.Println(err)
+			return nil, err
+		}
 		defer resp.Body.Close()
 		return ioutil.ReadAll(resp.Body)
 	} else if method == "GET" {
