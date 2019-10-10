@@ -12,13 +12,6 @@ import (
 )
 
 /**
-*@program: tool
-*@description:
-*@author: zzy
-*@create: 2019-10-10 15:45
- */
-
-/**
 *@program: jiuyun
 *@description: 谷歌验证器
 *@author: zzy
