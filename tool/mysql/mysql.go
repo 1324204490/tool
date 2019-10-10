@@ -14,7 +14,7 @@ func QueryThisMonth(time string) string {
 //查询当天代码
 //time 时间字段
 func QueryThisDay(time string) string {
-	return "date_format(" + time + ", '%Y-%m') = DATE_FORMAT(now(), '%Y-%d')"
+	return "date_format(" + time + ", '%Y-%d') = DATE_FORMAT(now(), '%Y-%d')"
 }
 
 //查询本周代码

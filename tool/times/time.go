@@ -39,3 +39,8 @@ func GetTimeStringNowNoTail() string {
 	t := TimeFormatString(*GetTimeNow())
 	return t[:len(t)-9]
 }
+
+//获取当前时间 2019-07-30 14:12:20
+func GetTimeString() string {
+	return TimeFormatString(time.Now())
+}
